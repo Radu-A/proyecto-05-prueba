@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.github.Radu_A.proyecto_05.service.LotoService;
+import com.github.Radu_A.proyecto_05.service.LotoServiceImpl;
 
 @Controller
 @RequestMapping("/loto")
 public class LotoController {
 
-	private LotoService lotoService;
+	private LotoServiceImpl lotoService;
 
-	public LotoController(LotoService lotoService) {
+	public LotoController(LotoServiceImpl lotoService) {
 		this.lotoService = lotoService;
 	}
 
@@ -37,11 +37,12 @@ public class LotoController {
 	}
 
 	@GetMapping("/genera/{max}/{count}/{pais}")
-	public String menu(Model model, @PathVariable int max, @PathVariable int count, @PathVariable int pais) {
+	public String menu(Model model, @PathVariable int max, @PathVariable int count, @PathVariable String pais) {
 		List<Integer> combinacion = lotoService.dameCombinacion(max, count);
-		model.addAttribute("pais", pais);
-		
-		return "loto/menu";
+		String paisMayuscula = pais.substring(0, 1).toUpperCase() + pais.substring(1);
+		model.addAttribute("pais", paisMayuscula);
+		model.addAttribute("combinacion", combinacion);
+		return "loto/genera";
 	}
 
 }

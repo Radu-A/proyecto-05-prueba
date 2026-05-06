@@ -5,7 +5,7 @@ import java.util.Random;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ProverbioService implements IProverbioService {
+public class ProverbioServiceImpl implements IProverbioService {
 
 	private String[] proverbios = { "Un viaje de diez mil kilómetros empieza con un solo paso.",
 			"Ten paciencia en un momento de ira y te ahorrarás cien días de arrepentimiento.",

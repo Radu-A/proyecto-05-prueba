@@ -34,19 +34,40 @@
 	<main>
 		<section>
 			<h1 th:text="${cabecera}" class="text-center"></h1>
-			<img alt="" th:src="@{img/logo.jpg}" class="rounded mx-auto d-block w-25">
+			<img alt="" th:src="@{../img/logo.jpg}" class="rounded mx-auto d-block w-25">
 		</section>
-		<p>Pellentesque tempor placerat arcu. Etiam suscipit, velit sed
-			iaculis feugiat, leo quam pulvinar mauris, ut finibus libero ex non
-			turpis. Suspendisse eget odio eget ex rhoncus placerat. Aliquam sed
-			libero pellentesque, ultrices purus non, laoreet enim. Praesent sed
-			massa eu arcu luctus suscipit ac sit amet lorem. Sed sit amet ligula
-			eget arcu lobortis malesuada. Integer sed rutrum nulla. Nulla quis
-			lectus lacinia leo ultricies blandit aliquet eu nisl. Nullam vitae
-			malesuada purus. Duis nec venenatis sapien, vitae ultricies justo.
-			Pellentesque fermentum sem sed neque hendrerit, vitae hendrerit massa
-			sagittis.</p>
-		<p th:text="${proverbio}" class="text-center fst-italic"></p>
+
+		<section>
+			<table>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>TITULO</th>
+						<th>AUTOR</th>
+						<th>EJEMPLARES</th>
+						<th>GENERO</th>
+						<th colspan="4">ACCIONES</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="libro : ${libros}">
+						<td th:text="${libro.id}"></td>
+						<td th:text="${libro.titulo}"></td>
+						<td th:text="${libro.autor}"></td>
+						<td th:text="${libro.ejemplares}"></td>
+						<td th:text="${libro.genero}"></td>
+						<td><a th:href="@{'/libros/detalles/' + ${libro.id}}" th:text="${accion1}" type="button"
+								class="btn btn-primary"></a></td>
+						<td><a th:href="@{'/libros/borrar/' + ${libro.id}}" th:text="${accion2}" type="button"
+								class="btn btn-warning"></a></td>
+						<td><a th:href="@{'/libros/form/' + ${libro.id}}" th:text="${accion3}" type="button"
+								class="btn btn-success"></a></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+
+
 	</main>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

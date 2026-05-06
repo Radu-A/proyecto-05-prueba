@@ -5,14 +5,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-import com.github.Radu_A.proyecto_05.service.ProverbioService;
+import com.github.Radu_A.proyecto_05.service.ProverbioServiceImpl;
 
 @Controller
 public class HomeController {
 	
-	private ProverbioService provervioService;
+	private ProverbioServiceImpl provervioService;
 	
-	public HomeController(ProverbioService provervioService) {
+	public HomeController(ProverbioServiceImpl provervioService) {
 		this.provervioService = provervioService;
 	}
 

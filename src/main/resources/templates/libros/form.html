@@ -34,19 +34,31 @@
 	<main>
 		<section>
 			<h1 th:text="${cabecera}" class="text-center"></h1>
-			<img alt="" th:src="@{img/logo.jpg}" class="rounded mx-auto d-block w-25">
+			<img alt="" th:src="@{../img/logo.jpg}" class="rounded mx-auto d-block w-25">
 		</section>
-		<p>Pellentesque tempor placerat arcu. Etiam suscipit, velit sed
-			iaculis feugiat, leo quam pulvinar mauris, ut finibus libero ex non
-			turpis. Suspendisse eget odio eget ex rhoncus placerat. Aliquam sed
-			libero pellentesque, ultrices purus non, laoreet enim. Praesent sed
-			massa eu arcu luctus suscipit ac sit amet lorem. Sed sit amet ligula
-			eget arcu lobortis malesuada. Integer sed rutrum nulla. Nulla quis
-			lectus lacinia leo ultricies blandit aliquet eu nisl. Nullam vitae
-			malesuada purus. Duis nec venenatis sapien, vitae ultricies justo.
-			Pellentesque fermentum sem sed neque hendrerit, vitae hendrerit massa
-			sagittis.</p>
-		<p th:text="${proverbio}" class="text-center fst-italic"></p>
+
+		<section>
+			<a th:href="@{'/libros/menu'}">← Volver</a>
+			<form th:action="@{/libros/guardar}" th:object="${libro}" method='POST'>
+				<input type="hidden" th:field="*{id}" />
+				<div class="form-group">
+					<label>Titulo</label> <input class="form-control" th:field="*{titulo}">
+				</div>
+				<div class="form-group">
+					<label>Autor</label> <input class="form-control" th:field="*{autor}">
+				</div>
+				<div class="form-group">
+					<label>Ejemplares</label> <input class="form-control" th:field="*{ejemplares}">
+				</div>
+				<div class="form-group">
+					<label>Género</label> <input class="form-control" th:field="*{genero}">
+				</div>
+				<br>
+				<button type="submit" class="btn btn-primary" th:text="${boton}"></button>
+			</form>
+		</section>
+
+
 	</main>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

@@ -7,7 +7,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service
-public class LotoService implements ILotoService {
+public class LotoServiceImpl implements ILotoService {
 	
 	@Override
 	public List<Integer> dameCombinacion(int max, int count) {
@@ -18,7 +18,7 @@ public class LotoService implements ILotoService {
 		}
 		Collections.shuffle(bombo);
 		for (int i = 0; i < count; i++) {
-			combinacion.add(i);			
+			combinacion.add(bombo.get(i));		
 		}
 		return combinacion;
 	}

@@ -1,0 +1,26 @@
+-- Entradas para la tabla 'libros'
+INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('Cien años de soledad', 'Gabriel García Márquez', 15, 'NOVELA');
+INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('1984', 'George Orwell', 20, 'CIENCIA_FICCION');
+INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('El nombre de la rosa', 'Umberto Eco', 8, 'HISTORIA');
+INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('Orgullo y prejuicio', 'Jane Austen', 12, 'ROMANCE');
+INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('It', 'Stephen King', 10, 'TERROR');
+INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('El Señor de los Anillos', 'J.R.R. Tolkien', 25, 'FANTASIA');
+INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('Steve Jobs', 'Walter Isaacson', 5, 'BIOGRAFIA');
+INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('Dune', 'Frank Herbert', 18, 'CIENCIA_FICCION');
+INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('Rayuela', 'Julio Cortázar', 7, 'NOVELA');
+INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('Los pilares de la Tierra', 'Ken Follett', 14, 'HISTORIA');
+INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('Como agua para chocolate', 'Laura Esquivel', 9, 'ROMANCE');
+INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('Drácula', 'Bram Stoker', 11, 'TERROR');
+INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('Harry Potter y la piedra filosofal', 'J.K. Rowling', 30, 'FANTASIA');
+INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('Diario de Ana Frank', 'Ana Frank', 22, 'BIOGRAFIA');
+INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('Crónica de una muerte anunciada', 'Gabriel García Márquez', 13, 'NOVELA');
+INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('Fahrenheit 451', 'Ray Bradbury', 16, 'CIENCIA_FICCION');
+INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('Sapiens', 'Yuval Noah Harari', 10, 'HISTORIA');
+INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('Jane Eyre', 'Charlotte Brontë', 6, 'ROMANCE');
+INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('El resplandor', 'Stephen King', 14, 'TERROR');
+INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('Juego de Tronos', 'George R.R. Martin', 19, 'FANTASIA');
+INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('El largo camino hacia la libertad', 'Nelson Mandela', 4, 'BIOGRAFIA');
+INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('La ciudad y los perros', 'Mario Vargas Llosa', 11, 'NOVELA');
+INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('Un mundo feliz', 'Aldous Huxley', 17, 'CIENCIA_FICCION');
+INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('El infinito en un junco', 'Irene Vallejo', 9, 'HISTORIA');
+INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('Dr. Jekyll y Mr. Hyde', 'Robert Louis Stevenson', 12, 'TERROR');

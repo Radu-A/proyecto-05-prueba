@@ -1,6 +1,9 @@
 package com.github.Radu_A.proyecto_05.controller;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +21,6 @@ public class ImagenController {
 	private ImagenServiceImpl imagenService;
 	
 	public ImagenController(ImagenServiceImpl imagenService) {
-		super();
 		this.imagenService = imagenService;
 	}
 
@@ -36,7 +38,10 @@ public class ImagenController {
 	public String menu(Model model) {
 		List<Imagen> partida = imagenService.damePartida();
 		Imagen solucion = partida.get(0);
-		model.addAttribute("imagen", solucion.getRutaImagen());
+		model.addAttribute("foto", solucion.getRutaImagen());
+		model.addAttribute("solucion", solucion);
+		Collections.shuffle(partida);
+		model.addAttribute("partida", partida);
 		return null;
 	}
 }

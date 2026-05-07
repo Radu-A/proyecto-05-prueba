@@ -35,6 +35,12 @@ public class Libro {
 	}
 	
 	// Getters and setters
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getTitulo() {
 		return titulo;
 	}
@@ -59,8 +65,8 @@ public class Libro {
 	public void setGenero(Genero genero) {
 		this.genero = genero;
 	}
-	public Long getId() {
-		return id;
-	}
 	
+	public String toString() {
+		return titulo;
+	}
 }

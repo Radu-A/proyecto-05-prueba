@@ -30,6 +30,8 @@ public class LibroServiceImpl implements ILibroService {
 
 	@Override
 	public Libro save(Libro libro) {
+		System.out.println("Estamos en service");
+		System.out.println(libro.getTitulo());
 		return libroRepository.save(libro);
 	}
 
@@ -42,5 +44,5 @@ public class LibroServiceImpl implements ILibroService {
 	public List<Libro> findByGenero(Genero genero) {
 		return libroRepository.findByGenero(genero);
 	}
-
+	
 }

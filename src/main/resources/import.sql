@@ -24,3 +24,14 @@ INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('La ciudad y los 
 INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('Un mundo feliz', 'Aldous Huxley', 17, 'CIENCIA_FICCION');
 INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('El infinito en un junco', 'Irene Vallejo', 9, 'HISTORIA');
 INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('Dr. Jekyll y Mr. Hyde', 'Robert Louis Stevenson', 12, 'TERROR');
+-- Entradas para la tabla 'imagenes'
+INSERT INTO imagenes (ciudad, ruta_imagen) VALUES ('Roma', 'https://images.unsplash.com/photo-1529154036614-a60975f5c760?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTc1NTR8MHwxfGFsbHx8fHx8fHx8fDE3NzgxNDU4OTR8&ixlib=rb-4.1.0&q=80&w=1080');
+INSERT INTO imagenes (ciudad, ruta_imagen) VALUES ('Paris', 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTc1NTR8MHwxfGFsbHx8fHx8fHx8fDE3NzgxNDU5ODN8&ixlib=rb-4.1.0&q=80&w=1080');
+INSERT INTO imagenes (ciudad, ruta_imagen) VALUES ('Nueva York', 'https://images.unsplash.com/photo-1496588152823-86ff7695e68f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTc1NTR8MHwxfGFsbHx8fHx8fHx8fDE3NzgxNDYwNzJ8&ixlib=rb-4.1.0&q=80&w=1080');
+INSERT INTO imagenes (ciudad, ruta_imagen) VALUES ('Nueva Delhi', 'https://images.unsplash.com/photo-1646938691456-a03d01a8276a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTc1NTR8MHwxfGFsbHx8fHx8fHx8fDE3NzgxNDYyMDF8&ixlib=rb-4.1.0&q=80&w=1080');
+INSERT INTO imagenes (ciudad, ruta_imagen) VALUES ('Bogotá', 'https://images.unsplash.com/photo-1568632234157-ce7aecd03d0d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTc1NTR8MHwxfGFsbHx8fHx8fHx8fDE3NzgxNDYzNDJ8&ixlib=rb-4.1.0&q=80&w=1080');
+INSERT INTO imagenes (ciudad, ruta_imagen) VALUES ('Quito', 'https://api.unsplash.com/photos/qD2gi7w1Pz0/?client_id=scqThqmBplSjGIcSQJ4kjZeMM6j4WXgQxFjcE8WcFuQ');
+INSERT INTO imagenes (ciudad, ruta_imagen) VALUES ('Vancouver', 'https://images.unsplash.com/photo-1559511260-66a654ae982a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTc1NTR8MHwxfGFsbHx8fHx8fHx8fDE3NzgxNDU2MzV8&ixlib=rb-4.1.0&q=80&w=1080');
+INSERT INTO imagenes (ciudad, ruta_imagen) VALUES ('Tokio', 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTc1NTR8MHwxfGFsbHx8fHx8fHx8fDE3NzgxNDY2MDB8&ixlib=rb-4.1.0&q=80&w=1080');
+INSERT INTO imagenes (ciudad, ruta_imagen) VALUES ('Pekin', 'https://images.unsplash.com/photo-1628001204260-c5df3cc58f02?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTc1NTR8MHwxfGFsbHx8fHx8fHx8fDE3NzgxNDY2Nzh8&ixlib=rb-4.1.0&q=80&w=1080');
+INSERT INTO imagenes (ciudad, ruta_imagen) VALUES ('Canberra', 'https://images.unsplash.com/photo-1600657532447-08dfb96e486b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTc1NTR8MHwxfGFsbHx8fHx8fHx8fDE3NzgxNDY3OTB8&ixlib=rb-4.1.0&q=80&w=1080');

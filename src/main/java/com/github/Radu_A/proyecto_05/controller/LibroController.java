@@ -5,8 +5,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.github.Radu_A.proyecto_05.model.Genero;
 import com.github.Radu_A.proyecto_05.model.Libro;
 import com.github.Radu_A.proyecto_05.service.LibroServiceImpl;
 
@@ -37,6 +39,7 @@ public class LibroController {
 		model.addAttribute("accion1", "Detalles");
 		model.addAttribute("accion2", "Borrar");
 		model.addAttribute("accion3", "Actualizar");
+		model.addAttribute("generos", Genero.values());
 		return "libros/menu";
 	}
 	
@@ -61,5 +64,30 @@ public class LibroController {
 		model.addAttribute("libro", libro);
 		model.addAttribute("boton", "Actualizar");
 		return "libros/form";
+	}
+	
+	@PostMapping("/guardar")
+	public String guardar(Libro libro) {
+		libroService.save(libro);
+		return "redirect:/libros/menu";
+	}
+	
+	@GetMapping("/nuevo")
+	public String nuevo(Model model) {
+		model.addAttribute("cabecera", "Nuevo libro");
+		model.addAttribute("libro", new Libro());
+		model.addAttribute("boton", "Crear");
+		return "libros/form";
+	}
+	
+	@GetMapping("/filtro/{genero}")
+	public String filtrar(Model model, @PathVariable Genero genero) {
+		model.addAttribute("cabecera", "Listado de articulos");
+		model.addAttribute("libros", libroService.findByGenero(genero));
+		model.addAttribute("accion1", "Detalles");
+		model.addAttribute("accion2", "Borrar");
+		model.addAttribute("accion3", "Actualizar");
+		model.addAttribute("generos", Genero.values());
+		return "libros/menu";
 	}
 }

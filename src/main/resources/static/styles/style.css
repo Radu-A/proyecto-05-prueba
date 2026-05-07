@@ -4,6 +4,43 @@ main {
 	max-width: 800px;
 }
 
+.main-header {
+	padding-bottom: 3rem;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+h1 {
+	padding: 2rem 0;
+}
+
+th, td {
+  padding: 5px;
+}
+
+/* LOTO */
+
 .combinacion-div {
 	display: flex;
+	flex-direction: row;
+	gap: 5px;
+}
+
+/* LIBROS */
+
+.libro-detalles-links {
+	display: flex;
+	justify-content: space-between;
+}
+
+.nuevo-article {
+	display: flex;
+	justify-content: space-between;
+}
+
+.filtro {
+	font-size: 0.8rem;
 }

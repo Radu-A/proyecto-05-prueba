@@ -45,12 +45,15 @@
 		</section>
 		<section>
 			<h2>¿Sabrías decir el nombre de la ciudad de la foto?</h2>
+			<div class="respuestas-container" >
+				<div th:each="imagen : ${partida}" th:text="${imagen.ciudad}"></div>
+			</div>
 			<table>
 				<tbody>
 					<tr  th:each="imagen : ${partida}">
 						<th scope="row">1</th>
 						<td>
-							<a th:href="@{/imagenes/respuesta/{solucion.id}/{imagen.id}}" th:text="${imagen.ciudad}"></a>
+							<a th:href="@{'/imagenes/respuesta/' + ${solucion.id} + '/' + ${imagen.id}}" th:text="${imagen.ciudad}"></a>
 						</td>
 					</tr>
 				</tbody>

@@ -1,14 +1,13 @@
 package com.github.Radu_A.proyecto_05.controller;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.github.Radu_A.proyecto_05.model.Imagen;
@@ -43,5 +42,14 @@ public class ImagenController {
 		Collections.shuffle(partida);
 		model.addAttribute("partida", partida);
 		return null;
+	}
+	
+	@GetMapping("/respuesta/{solucionId}/{respuestaId}")
+	public String respuesta(Model model, @PathVariable String solucionId, @PathVariable String respuestaId) {
+		System.out.println(solucionId);
+		System.out.println(respuestaId);
+		model.addAttribute("solucionId", solucionId);
+		model.addAttribute("imagenId", respuestaId);
+		return "imagenes/respuesta";
 	}
 }

@@ -40,21 +40,11 @@
 		<section>
 			<h1 th:text="${cabecera}" class="text-center"></h1>
 		</section>
-		<section>
-			<img alt="" th:src="@{${solucion.rutaImagen}}" class="rounded mx-auto d-block w-75">
+		<section th:if="${solucionId == respuestaId}">
+			<h2>Enhorabuena, has acertado!!</h2>
 		</section>
-		<section>
-			<h2>¿Sabrías decir el nombre de la ciudad de la foto?</h2>
-			<table>
-				<tbody>
-					<tr  th:each="imagen : ${partida}">
-						<th scope="row">1</th>
-						<td>
-							<a th:href="@{/imagenes/respuesta/{solucion.id}/{imagen.id}}" th:text="${imagen.ciudad}"></a>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+		<section th:if="${solucionId != respuestaId}">
+			<h2>Lo siento, la respuesta no es correcta...</h2>
 		</section>
 	</main>
 

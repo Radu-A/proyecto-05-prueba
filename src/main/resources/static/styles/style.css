@@ -1,24 +1,15 @@
 
 main {
-	margin: 0 auto;
-	max-width: 800px;
-}
-
-.main-header {
-	padding-bottom: 3rem;
-}
-
-a {
-	text-decoration: none;
-	color: inherit;
+	padding-bottom: 5rem ;
 }
 
 h1 {
 	padding: 2rem 0;
 }
 
-th, td {
-  padding: 5px;
+th,
+td {
+	padding: 5px;
 }
 
 /* LOTO */
@@ -26,7 +17,16 @@ th, td {
 .combinacion-div {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-around;
 	gap: 5px;
+}
+
+.bola {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 5rem;
+	height: 5rem;
 }
 
 /* LIBROS */

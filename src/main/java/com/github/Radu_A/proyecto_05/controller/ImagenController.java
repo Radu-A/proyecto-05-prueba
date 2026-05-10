@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.github.Radu_A.proyecto_05.model.Imagen;
 import com.github.Radu_A.proyecto_05.service.ImagenServiceImpl;
+import com.github.Radu_A.proyecto_05.service.LinkService;
 
 @Controller
 @RequestMapping("/imagenes")
@@ -19,8 +20,16 @@ public class ImagenController {
 	
 	private ImagenServiceImpl imagenService;
 	
-	public ImagenController(ImagenServiceImpl imagenService) {
+	private LinkService linkService;
+	
+	public ImagenController(ImagenServiceImpl imagenService, LinkService linkService) {
 		this.imagenService = imagenService;
+		this.linkService = linkService;
+	}
+	
+	@ModelAttribute("links")
+	public List<String[]> links() {
+		return linkService.dameLinks();
 	}
 
 	@ModelAttribute("titulo")
@@ -41,14 +50,15 @@ public class ImagenController {
 		model.addAttribute("solucion", solucion);
 		Collections.shuffle(partida);
 		model.addAttribute("partida", partida);
-		return null;
+		return "imagenes/menu";
 	}
 	
 	@GetMapping("/respuesta/{solucionId}/{respuestaId}")
-	public String respuesta(Model model, @PathVariable String solucionId, @PathVariable String respuestaId) {
+	public String respuesta(Model model, @PathVariable Long solucionId, @PathVariable Long respuestaId) {
 		System.out.println(solucionId);
 		System.out.println(respuestaId);
-		model.addAttribute("solucionId", solucionId);
+		Imagen solucion = imagenService.findById(solucionId);
+		model.addAttribute("solucion", solucion);
 		model.addAttribute("imagenId", respuestaId);
 		return "imagenes/respuesta";
 	}

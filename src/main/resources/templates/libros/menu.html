@@ -2,94 +2,97 @@
 <html>
 
 <head>
-<meta charset="UTF-8">
-<title th:text="${titulo}"></title>
-<link href="/styles/style.css" rel="stylesheet" />
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-	crossorigin="anonymous">
+	<meta charset="UTF-8">
+	<title th:text="${titulo}"></title>
+	<link rel="icon" type="image/x-icon" th:href="@{/img/logo-sm.jpg}">
+	<link href="/styles/style.css" rel="stylesheet" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
 	<header>
-		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<nav class="navbar navbar-expand-lg bg-primary">
 			<div class="container-fluid">
-				<a th:text="${titulo}" class="navbar-brand" th:href="@{/home}"></a>
-				<button class="navbar-toggler" type="button"
-					data-bs-toggle="collapse" data-bs-target="#navbarNav"
-					aria-controls="navbarNav" aria-expanded="false"
-					aria-label="Toggle navigation">
+				<a class="navbar-brand text-light" th:href="@{/home}">
+					<img th:src="@{/img/logo-sm.jpg}" alt="Bootstrap" width="30" height="24">
+				</a>
+				<a th:text="${titulo.toUpperCase}" class="navbar-brand text-light" th:href="@{/home}">
+					<img th:src="@{/img/logo-sm.jpg}" alt="Bootstrap" width="30" height="24">
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+					aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				<div class="collapse navbar-collapse" id="navbarNav">
+				<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
 					<ul class="navbar-nav">
-						<li class="nav-item"><a class="nav-link" aria-current="page"
-							th:href="@{/loto/menu}">Loto</a></li>
-						<li class="nav-item"><a class="nav-link"
-							th:href="@{/libros/menu}">Libros</a></li>
-						<li class="nav-item"><a class="nav-link"
-							th:href="@{/imagenes/menu}">Imágenes</a></li>
+						<li class="nav-item" th:each="link : ${links}"><a class="nav-link text-light"
+								aria-current="page" th:href="@{${link[0]}}"
+								th:text="${#strings.capitalize(link[1])}"></a>
+						</li>
 					</ul>
 				</div>
 			</div>
 		</nav>
 	</header>
-	<main>
-		<section class="main-header">
-			<h1 th:text="${cabecera}" class="text-center"></h1>
-			<img alt="" th:src="@{../img/logo.jpg}"
-				class="rounded mx-auto d-block w-25">
-		</section>
+	<main class="container pb-15">
 
-		<section>
-			<article class="nuevo-article">
-				<div class="combinacion-div">
-					<div th:each="genero : ${generos}">
-						<a th:href="@{'/libros/filtro/' + ${genero}}" th:text="${genero}" class="filtro"></a>
+		<div class="row justify-content-center gap-5">
+
+			<section class="col-11 col-lg-10">
+				<h1 th:text="${cabecera.toUpperCase}" class="text-center"></h1>
+			</section>
+
+			<section class="col-11 col-lg-10 gap-5">
+				<article class="nuevo-article">
+					<div class="combinacion-div">
+						<div th:each="genero : ${generos}">
+							<a th:href="@{'/libros/filtro/' + ${genero}}" th:text="${genero}" class="filtro"></a>
+						</div>
+						<div>
+							<a th:href="@{'/libros/menu'}" class="filtro">QUITAR FILTRO</a>
+						</div>
 					</div>
-					<div>
-						<a th:href="@{'/libros/menu'}" class="filtro">QUITAR FILTRO</a>
-					</div>
-				</div>
-				<a th:href="@{'/libros/nuevo'}" type="button"
-					class="btn btn-primary">Crear nuevo</a>
-			</article>
-			<table>
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th>TITULO</th>
-						<th>AUTOR</th>
-						<th>EJEMPLARES</th>
-						<th>GENERO</th>
-						<th colspan="4">ACCIONES</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr th:each="libro : ${libros}">
-						<td th:text="${libro.id}"></td>
-						<td th:text="${libro.titulo}"></td>
-						<td th:text="${libro.autor}"></td>
-						<td th:text="${libro.ejemplares}"></td>
-						<td th:text="${libro.genero}"></td>
-						<td><a th:href="@{'/libros/detalles/' + ${libro.id}}"
-							th:text="${accion1}" type="button" class="btn btn-primary"></a></td>
-						<td><a th:href="@{'/libros/borrar/' + ${libro.id}}"
-							th:text="${accion2}" type="button" class="btn btn-danger"></a></td>
-						<td><a th:href="@{'/libros/form/' + ${libro.id}}"
-							th:text="${accion3}" type="button" class="btn btn-primary"></a></td>
-					</tr>
-				</tbody>
-			</table>
-		</section>
+					<a th:href="@{'/libros/nuevo'}" type="button" class="btn btn-primary">Crear nuevo</a>
+				</article>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>TITULO</th>
+							<th>AUTOR</th>
+							<th>EJEMPLARES</th>
+							<th>GENERO</th>
+							<th>ACCIONES</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="libro : ${libros}">
+							<td th:text="${libro.id}"></td>
+							<td th:text="${libro.titulo}"></td>
+							<td th:text="${libro.autor}"></td>
+							<td th:text="${libro.ejemplares}"></td>
+							<td th:text="${libro.genero}"></td>
+							<td>
+								<div class="btn-group" role="group" aria-label="Basic outlined example">
+									<a type="button" class="btn btn-outline-primary"
+										th:href="@{'/libros/detalles/' + ${libro.id}}" th:text="${accion1}">Left</a>
+									<a type="button" class="btn btn-outline-primary"
+										th:href="@{'/libros/borrar/' + ${libro.id}}" th:text="${accion2}">Middle</a>
+									<a type="button" class="btn btn-outline-primary"
+										th:href="@{'/libros/form/' + ${libro.id}}" th:text="${accion3}">Right</a>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</div>
 
 
 	</main>
 
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
 		crossorigin="anonymous"></script>
 </body>

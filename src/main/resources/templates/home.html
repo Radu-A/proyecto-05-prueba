@@ -39,29 +39,23 @@
 		<div class="row justify-content-center gap-5">
 
 			<section class="col-11 col-lg-8">
-				<h1 th:text="${cabecera}"></h1>
-				<img alt="" th:src="@{../img/logo.jpg}" class="rounded mx-auto d-block w-25">
-				<div class="libro-detalles-links">
-					<a th:href="@{'/libros/menu'}" type="button" class="btn btn-warning">← Volver</a> <a
-						th:href="@{'/libros/form/' + ${libro.id}}" type="button" class="btn btn-primary">Editar</a>
-				</div>
+				<h1 th:text="${cabecera.toUpperCase}" class="text-center fw-bold"></h1>
+				<img alt="" th:src="@{img/portada.jpg}" class="rounded mx-auto d-block w-75">
 			</section>
-
 			<section class="col-11 col-lg-8">
-				<ul class="list-group">
-					<li class="list-group-item">
-						<h4>Id: <span th:text="${libro.id}"></span></h4>
-					</li>
-					<li class="list-group-item">
-						<h4>Título: <span th:text="${libro.titulo}"></span></h4>
-					</li>
-					<li class="list-group-item">
-						<h4>Ejemplares: <span th:text="${libro.ejemplares}"></span></h4>
-					</li>
-					<li class="list-group-item">
-						<h4>Género: <span th:text="${libro.genero}"></span></h4>
-					</li>
-				</ul>
+				<p>Pellentesque tempor placerat arcu. Etiam suscipit, velit sed
+					iaculis feugiat, leo quam pulvinar mauris, ut finibus libero ex non
+					turpis. Suspendisse eget odio eget ex rhoncus placerat. Aliquam sed
+					libero pellentesque, ultrices purus non, laoreet enim. Praesent sed
+					massa eu arcu luctus suscipit ac sit amet lorem. Sed sit amet ligula
+					eget arcu lobortis malesuada. Integer sed rutrum nulla. Nulla quis
+					lectus lacinia leo ultricies blandit aliquet eu nisl. Nullam vitae
+					malesuada purus. Duis nec venenatis sapien, vitae ultricies justo.
+					Pellentesque fermentum sem sed neque hendrerit, vitae hendrerit massa
+					sagittis.</p>
+			</section>
+			<section class="col-11 col-lg-8">
+				<h3 class="text-center fst-italic">"<span th:text="${proverbio}"></span>"</h3>
 			</section>
 		</div>
 	</main>

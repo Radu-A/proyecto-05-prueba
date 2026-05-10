@@ -1,5 +1,7 @@
 package com.github.Radu_A.proyecto_05.controller;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,15 +13,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.github.Radu_A.proyecto_05.model.Genero;
 import com.github.Radu_A.proyecto_05.model.Libro;
 import com.github.Radu_A.proyecto_05.service.LibroServiceImpl;
+import com.github.Radu_A.proyecto_05.service.LinkService;
 
 @Controller
 @RequestMapping("/libros")
 public class LibroController {
 	
 	private LibroServiceImpl libroService;
+	
+	private LinkService linkService;
 
-	public LibroController(LibroServiceImpl libroService) {
+	public LibroController(LibroServiceImpl libroService, LinkService linkService) {
 		this.libroService = libroService;
+		this.linkService = linkService;
+	}
+	
+	@ModelAttribute("links")
+	public List<String[]> links() {
+		return linkService.dameLinks();
 	}
 
 	@ModelAttribute("titulo")
@@ -34,7 +45,7 @@ public class LibroController {
 	
 	@GetMapping("/menu")
 	public String listado(Model model) {
-		model.addAttribute("cabecera", "Listado de articulos");
+		model.addAttribute("cabecera", "Listado de libros");
 		model.addAttribute("libros", libroService.findAll());
 		model.addAttribute("accion1", "Detalles");
 		model.addAttribute("accion2", "Borrar");

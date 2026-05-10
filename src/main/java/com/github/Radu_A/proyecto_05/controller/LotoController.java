@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.github.Radu_A.proyecto_05.service.LinkService;
 import com.github.Radu_A.proyecto_05.service.LotoServiceImpl;
 
 @Controller
@@ -16,9 +17,17 @@ import com.github.Radu_A.proyecto_05.service.LotoServiceImpl;
 public class LotoController {
 
 	private LotoServiceImpl lotoService;
+	
+	private LinkService linkService;
 
-	public LotoController(LotoServiceImpl lotoService) {
+	public LotoController(LotoServiceImpl lotoService, LinkService linkService) {
 		this.lotoService = lotoService;
+		this.linkService = linkService;
+	}
+	
+	@ModelAttribute("links")
+	public List<String[]> links() {
+		return linkService.dameLinks();
 	}
 
 	@ModelAttribute("titulo")
